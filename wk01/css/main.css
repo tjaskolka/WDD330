@@ -1,0 +1,12 @@
+body {
+    background-color: burlywood;
+}
+
+input {
+    height: 25px;
+    border-radius: 5px;
+    width: 200px;
+    border: none;
+    text-indent: 5px;
+    box-shadow: 0px 0px 5px #666666 inset;
+}
