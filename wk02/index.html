@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Code & Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1><a href="rainbow/rainbow.html">Click a Rainbow</a></h1>
+    <p>NOTE: to make code backwards compatible, you can use the Babel transpiler (https://unpkg.com/babel-standalone@6/bable.min.js'). Place this link <em>before</em> referencing the JavaScript that needs it, then change the type of that js to type='text/babel'.</p>
+    <h1><a href="quiz/">Quiz Ninja</a></h1>
+    
+    <h1>JavaScript Ninja notes</h1>
+    <p>In the example of a global variable on p61, {c = 5; c;}, <span>why does the code not throw an error for the variable being undeclared?</span></p>
+    <p>p82 - typeof NaN = number (haha!) <span>Why can't you test to see if a value is a number by comparing to NaN? </span>(42 !== NaN) is true, so 42 is a number. Instead you use Number.isFinite().</p>
+    <p>p87 - I was aware of parseInt, but did not know it would also convert the number base.</p>
+<p>p88 -<ul><li><b>Undefined</b> = coerced to NaN and usually set by js</li>
+<li><b>Null</b> = coerced to zero and usually set by the programmer</li></ul></p>
+<p>Bitwise operators - Some of the number manipulation almost seems like magic, but I can't see <span>where the practical application comes in?</span> They can reduce the time to do calculations, and are used in lower level programming.</p>
+<p><ul><li>Soft equality (==) - does not take type into account when comparing values and may force values</li><li>Hard equality (===) - will look at type when comparing values. Except NaN === NaN evaluates as false. So you have to use Number.isNaN(NaN) to get 'true'. This answers my question above from p82. :) Always use === while keeping in mind the NaN anomaly and explicitly convert types before comparing.</li><li>Inequality - similarly there is soft inequality (!=) and hard inequality (!==). The former suffers from type coercion, the latter is the preferred method.</li></ul>
+   </p>
+   <p>Chapter 3 reading. I had to try <em>typeof []</em> because I would have expected to be testing <em>typeof myArray;</em> instead. It did produce the result 'object' but that made me wonder <span>how to delete an array?</span> I read on p128 that you can assign 'null' to an array to delete it, but when I tried that on the array I created, I got <span>Uncaught TypeError: Assignment to constant variable? So maybe the question is, how do you delete a const?</span> Apparently you will have to start a new session because a const, by definition, is unchangeable.</p>
+   <p><span>When you use the concat method without using assignment, how do you refer to the new, combined array?</span></p>
+   <p>p128 - <em>array = [...strong][0];</em><span>What is the <em>[0]</em> for?</span></p>
+   <p>p153 - <span>what is the purpose of an anonymous function?</span> It looks like they are meant for non-complex functions that will not need to be reused elsewhere.</p>
+</body>
+</html>
