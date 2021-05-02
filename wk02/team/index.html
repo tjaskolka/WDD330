@@ -34,9 +34,10 @@
 
     <h1>01 Stretch</h1>
     <p>
-        <label for="snumber1">Enter 2 integers</label>
+        <label for="snumber1">Enter 2 numbers</label>
         <input type="number" id="snumber1">
         <input type="number" id="snumber2">
+        <button onclick="saddnums()">+</button>
         <button onclick="subNums()">-</button>
         <div id="outputSub"></div>
     </p>
@@ -71,8 +72,8 @@
 
 <script>
     let sub = subNums() {
-        let num1 = parseInt(document.getElementById("number1").value);
-        let num2 = parseInt(document.getElementById("number2").value);
+        let num01 = parseInt(document.getElementById("number1").value);
+        let num02 = parseInt(document.getElementById("number2").value);
 
         document.getElementById("outputAdd").innerHTML = num1 + num2;
     }
