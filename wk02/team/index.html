@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W02 Team Activity</title>
+</head>
+<body>
+    <h1>01</h1>
+    <p>
+        <label for="userInput">Type something...</label>
+        <input type="text" id="userInput">
+        <button onclick="readInput()">Report input</button>
+        <div id="output"></div>
+    </p>
+    
+    <h1>02</h1>
+    <p>
+        <label for="numberInput">Enter an integer</label>
+        <input type="number" id="numberInput">
+        <button onclick="totalNums()">Total</button>
+        <div id="outputNum"></div>
+    </p>
+
+    <h1>03</h1>
+    <p>
+        <label for="number1">Enter 2 integers</label>
+        <input type="number" id="number1">
+        <input type="number" id="number2">
+        <button onclick="addNums()">+</button>
+        <div id="outputAdd"></div>
+    </p>
+
+    <h1>01 Stretch</h1>
+    <p>
+        <label for="snumber1">Enter 2 integers</label>
+        <input type="number" id="snumber1">
+        <input type="number" id="snumber2">
+        <button onclick="subNums()">-</button>
+        <div id="outputSub"></div>
+    </p>
+
+
+    <script>
+        function readInput() {
+            let input = document.getElementById("userInput").value;
+            document.getElementById("output").innerHTML = input;
+        }
+    </script>
+
+    <script>
+        function totalNums() {
+            let number = parseInt(document.getElementById("numberInput").value);
+            let sum = 0;
+            for (let i = 0; i <= number; i++) {
+                sum += i;
+                document.getElementById("outputNum").innerHTML = sum;
+            }
+        }
+    </script>
+
+    <script>
+        function addNums() {
+            let num1 = parseInt(document.getElementById("number1").value);
+            let num2 = parseInt(document.getElementById("number2").value);
+
+            document.getElementById("outputAdd").innerHTML = num1 + num2;
+        }
+    </script>
+
+<script>
+    let sub = subNums() {
+        let num1 = parseInt(document.getElementById("number1").value);
+        let num2 = parseInt(document.getElementById("number2").value);
+
+        document.getElementById("outputAdd").innerHTML = num1 + num2;
+    }
+</script>
+</body>
+</html>
