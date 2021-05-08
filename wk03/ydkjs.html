@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let phonePrice = 99.99;
+        let accPrice = 9.99;
+        let bankAcct = 400;
+        let tax = .05;
+
+        function calcTax(total, tax) {
+            return total + total * tax;
+        }
+      
+        function formatPrice (price) {
+            return '$' + price.toFixed(2);
+        }
+
+        function buyPhone(phonePrice, accPrice) {
+            return phonePrice + accPrice;
+        }
+
+        let total = calcTax(buyPhone(phonePrice,accPrice),tax);
+        console.log(formatPrice(total));
+
+        while (total < bankAcct) {
+            buyPhone(phonePrice, accPrice);
+            let phone = 0;
+            phone = phone +1;
+            bankAcct = bankAcct - total;
+            console.log(phone);
+        }
+  
+
+    </script>
+</body>
+</html>

@@ -37,9 +37,12 @@
         <label for="snumber1">Enter 2 numbers</label>
         <input type="number" id="snumber1">
         <input type="number" id="snumber2">
-        <button onclick="saddnums()">+</button>
-        <button onclick="subNums()">-</button>
+        <button onclick="add2()">+</button>
+        <button onclick="sub2">-</button>
+        <button onclick="mult2">*</button>
+        <div id="outputAdd2"></div>
         <div id="outputSub"></div>
+        <div id="outputMult"></div>
     </p>
 
 
@@ -71,12 +74,33 @@
     </script>
 
 <script>
-    let sub = subNums() {
-        let num01 = parseInt(document.getElementById("number1").value);
-        let num02 = parseInt(document.getElementById("number2").value);
 
-        document.getElementById("outputAdd").innerHTML = num1 + num2;
+
+    var sub2 = function() {
+    let num01 = parseInt(document.getElementById("snumber1").value);
+    let num02 = parseInt(document.getElementById("snumber2").value);
+    let total2 = num01 - num02;
+    document.getELementById('outputSub').innerHTML = total2;
     }
+
+    sub2();
+
+    var mult2 = () => {
+        let num01 = parseInt(document.getElementById("snumber1").value);
+        let num02 = parseInt(document.getElementById("snumber2").value);
+        let total3 = num01 * num02;
+        document.getElementById('outputMult').innerHTML = total3;
+    }
+
+
+
+function add2() {
+    let num01 = parseInt(document.getElementById("snumber1").value);
+    let num02 = parseInt(document.getElementById("snumber2").value);
+    let total = num01 + num02;
+    return total;
+}
+
 </script>
 </body>
 </html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes & Code for Week 3</title>
+</head>
+<body>
+    <h1>Object Methods reading</h1>
+    <p>Object = representation of a real world entitity (ex. user John)</p>
+    <p>Method = function that is a property of a method, allows objects to "act"</p>
+    <p>OOP = code using objects to represent entitites</p>
+    <p>this = used by method to access object (before the dot)</p>
+    <p>Arrow functions do not have a "this" but instead reference the outer function</p>
+    <pre>  let calculator = {
+        read() {
+          this.num1 = +prompt('1st number?');
+          this.num2 = +prompt('2nd number?');
+        },
+    
+        sum() {
+          return this.num1 + this.num2;
+        },
+    
+        mul() {
+          return this.num1 * this.num2;
+        }
+    
+      }
+    
+      calculator.read();
+    alert( calculator.num1 + ' + ' + calculator.num2 + ' = ' + calculator.sum() );
+    alert( calculator.num1 + ' * ' + calculator.num2 + ' = ' + calculator.mul() );</pre>
+    <h1>JS Ninja reading</h1>
+    <h2>Chapter 5: Objects</h2>
+    <p>Object literal = object that is created by wrapping its properties & methods in curly braces</p>
+    <p>Calling a method is the same as invoking a function, (use () after method name).</p>
+    <p>Object literal pattern = create an object literal that serves as a namespace, then add values as properties of that object and functions as methods.</p>
+    <h3>Built-in Objects</h3>
+    <ul><li>Arrays</li>
+    <li>Functions</li>
+    <li>JSON</li>
+    <li>Math</li>
+    <li>Date</li>
+    <li>RegExp</li></ul>
+    <h1>You Don't Know JS Reading</h1>
+    <p>Statements = a group of words, numbers and operators that performs a specific task. (e.g. <pre>a = b * 2</pre> )</p>
+    <p>Expressions = components of a statement. Using above example:
+        <ul><li>'2' is a <em>literal value expression</em></li>
+        <li>'b' is a <em>variable expression</em></li>
+    <li>'b * 2' is an <em>arithmetic expression</em></li>
+<li>'a = b * 2' is an <em>assignment expression</em></li></ul>
+Other expressions:
+<ul><li>Expression statement - 'b * 2'</li>
+<li>Call expression - 'alert(a);'</li></ul>
+    </p>
+<p>Interpreting code = translation of code to computer language done at runtime.</p>
+<p>Compiling code = translation of code to computer language done prior to runtime.</p>
+<p>Javascript code is compiled then run at runtime.</p>
+</body>
+</html>
