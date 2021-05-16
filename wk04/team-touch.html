@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-tac-toe</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+        body {
+            font-family: 'Lato', sans-serif;
+            font-size: 42px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: .8em;
+        }
+        #game {
+            display: grid;
+            grid-template: repeat(3, 100px) / repeat(3, 100px);
+            margin: 0 auto;
+            max-width: 302px;
+            background-color: #555;
+            gap: 1px;
+        }
+
+        .box {
+            background-color: #fff;
+            display: grid;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #win {
+            font-size: x-large;
+            font-color: red;
+        }
+        button {
+            width: 70px;
+            margin: 2em;
+        }
+
+    </style>
+</head>
+<body>
+     <h1>Tic-Tac-Toe</h1>
+    <div id="win"></div>
+        
+    <div id="game">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    </div>
+   
+
+    <button id="reset" onclick="resetBoard()">Clear board</button>
+</body>
+<script>
+    const board = document.getElementById('game');
+    board.addEventListener('click', markSquare);
+    const cells = document.querySelectorAll('.box');
+    let player = "x";
+
+    function markSquare() {
+        if (event.target.innerHTML == "" && player == "x") {
+            event.target.innerHTML = player;
+            return player = "o";
+        } else {
+            event.target.innerHTML = player;
+            return player = "x";
+        }
+    }
+
+    function resetBoard() {
+        cells.forEach(cell => {
+            cell.innerHTML = "";
+        });
+    }
+
+    function checkWin() {
+            if (cells[0].innerHTML == cells[1].innerHTML && cells[1].innerHTML == cells[2].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[0].innerHTML == cells[3].innerHTML && cells[0].innerHTML == cells[6].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[0].innerHTML == cells[4].innerHTML && cells[0].innerHTML == cells[8].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[2].innerHTML == cells[4].innerHTML && cells[2].innerHTML == cells[6].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[2].innerHTML == cells[5].innerHTML && cells[2].innerHTML == cells[8].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+            if (cells[6].innerHTML == cells[7].innerHTML && cells[6].innerHTML == cells[8].innerHTML) {
+                document.getElementById('win').innerHTML = " You win!!!";
+            }
+
+
+
+        }
+
+
+
+</script>
+</html>
