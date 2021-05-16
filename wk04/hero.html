@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hero Form</title>
+    <style>
+        .error {
+            background: #f99;
+            border: #900 1px solid;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <form id='hero'>
@@ -31,8 +38,8 @@
         <input type="checkbox" id='telekinesis' value='Telekinesis' name='powers'>
     </label>
     <p>What type of hero are you?</p>
-    <label for="hero">Hero: 
-        <input type="radio" name="category" value="Hero" id='hero'>
+    <label for="herotype">Hero: 
+        <input type="radio" name="category" value="Hero" id='herotype'>
     </label>
     <label for="villain">Villain: 
         <input type="radio" name="category" value="Villain" id='villain'>
@@ -57,7 +64,7 @@
     <textarea name="origin" id="origin" cols="60" rows="20"></textarea>
 </label>
 <button type="reset">Reset</button>
-       <p> <button type='submit'>Submit</button></p>
+       <p> <button type='submit' id='submit' disabled>Submit</button></p>
 
     </form>
    
