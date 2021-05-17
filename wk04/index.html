@@ -1,33 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 4 Notes & Code</title>
 </head>
+
 <body>
     <h1>Week 4 Notes & Code</h1>
-<h2>JS Ninja Chapter 8 Notes and code</h2>
-<p>
-    Use square bracket notation when a name attribute contain spaces or dashes. 
-<em>.search</em> is equal to <em>['search']</em></p>
-<p><a href="search.html">Search form</a></p>
-<p><a href="hero.html">Hero form</a></p>
-<p><a href="quiz/">Quiz Ninja</a></p>
+    <h2>JS Ninja Chapter 8 Notes and code</h2>
+    <p>
+        Use square bracket notation when a name attribute contain spaces or
+        dashes.
+        <em>.search</em> is equal to <em>['search']</em>
+    </p>
+    <p><a href="search.html">Search form</a></p>
+    <p><a href="hero.html">Hero form</a></p>
+    <p><a href="quiz/">Quiz Ninja</a></p>
 
-<h2>Team Activity</h2>
-<p>Tic-tac-toe game. We built an interactive game that used an event listener to mark the board with Xs or Os. Since it was easier to do online together, we used the 'click' event while building the game. Afterwards, we changed the event to 'touchend' per our instructions and it still worked. :) See both versions here:</p>
-<p><a href="team.html">Tic-Tac-Toe</a></p>
-<p><a href="team-touch.html">Touch Tic-Tac-Toe</a></p>
+    <h2>Team Activity</h2>
+    <p>Tic-tac-toe game. We built an interactive game that used an event
+        listener to mark the board with Xs or Os. Since it was easier to do
+        online together, we used the 'click' event while building the game.
+        Afterwards, we changed the event to 'touchend' per our instructions and
+        it still worked. :) See both versions here:</p>
+    <p><a href="team.html">Tic-Tac-Toe</a></p>
+    <p><a href="team-touch.html">Touch Tic-Tac-Toe</a></p>
 
-<h2>Chapter 12 - Object Oriented Programming</h2>
+    <h2>Chapter 12 - Object Oriented Programming</h2>
 
-<p>OOP has 3 main concepts:</p>
-<ol><li>Encapsulation - inner workings are hidden and only essential functions are available</li>
-<li>Polymorphism - various objects can use the same method</li>
-<li>Inheritance - take features of one object and add new ones</li></ol>
-<p><em>Prototype-based</em> = used by javascript before classes became available.</p>
-    
+    <p>OOP has 3 main concepts:</p>
+    <ol>
+        <li>Encapsulation - inner workings are hidden and only essential
+            functions are available</li>
+        <li>Polymorphism - various objects can use the same method</li>
+        <li>Inheritance - take features of one object and add new ones</li>
+    </ol>
+    <p><em>Prototype-based</em> = used by javascript before classes became
+        available.</p>
+    <p>ES6 class declaration works just like a constructor function. Name of
+        class is capitalized (e.g. class Dice {})</p>
+    <p>Static Methods - (called class methods elsewhere) called by the class
+        directly rather than instances of the class. (e.g. Dice.description()
+        but not redDice.description, redDice being an instance of Dice).</p>
+    <p>Prototypal inheritance - every class has a prototype property that is
+        shared by every instance of the class. <span>Can you change a prototype
+            property into an own property? Yes, assign them their own value.
+            These will take precendence over prototype props.</span> Prototype
+        cannot be overwritten by assigning it to a new object literal if class
+        declarations are used. Use constructor functions to overwrite. However,
+        any instances already existing will keep the old properties.</p>
+    <p>Prototypes are used to add properties or methods after a class has been
+        declared. Do not use arrays or objects for a default value.</p>
+    <p>Use private properties to limit access to properties. Changes can be
+        validated this way as well.</p>
+    <p>Properties that are <em>non-enumerable</em> will not show up in a <em>for-in</em>
+        loop.</p>
+        <p>All properties and methods created by assignment are enumerable.</p>
+        <p>Built-in methods should be non-enumerable, user-defined methods should be enumerable.</p>
+        <p>The <em>extends</em> keyword in a class declaration let an object inherit class from another class (class NinjaTurtle extends Turtle)</p>
+        <p>Polymorphism. <em>toString()</em> method is shared by all objects. Polymorphism means than an object can override this with a more specific implementation</p>
 </body>
+
 </html>
