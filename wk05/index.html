@@ -12,6 +12,21 @@
     <ul><li>System error</li>
     <li>Programmer error</li>
 <li>User error</li></ul>
+<p>It is the programmers responsibility to be aware of possible system errors and work around them, to fix errors in programming ASAP and to anticipate possible user errors and provide ways to deal with them that will help the user.</p>
+<p>EXCEPTION: error that produces a return value that can be used by the program to deal with error.</p>
+<p>STACK TRACES: sequence of functions or method calls that lead to the point where the error occurred.</p>
+<p>WARNINGS: an error that isn't enough of a problem to stop the program from functioning.</p>
+<p>STRICT MODE: a less forgiving way of running the program that will catch and identify more exceptions and warnings and especially sloppy code practices. To use strict mode, just add the following as the first line of the javascript file: 'use strict';. Strict mode can also be used inside a function to limit it to that function. It is recommended that you place all your code in a function that will invoke strict mode:</p>
+<pre>
+    (function() {
+        'use strict';
+        //All your code would go inside this function
+    }());
+</pre>
+
+
+
+<h2><a href="../../JavaScript30/02 - JS and CSS Clock/index-START.html"></a>JavaScript30 - Day 2</h2>
 
 </body>
 </html>
