@@ -29,6 +29,29 @@
 <p>Use alert() when debugging to check expected value(s) at certain point, as well as stop the process at that point (until you click 'OK').</p>
 <p>Use console.trace() to show chain of functions called up to that point.</p>
 <p>Use debugger command within code to pause execution and check variables.</p>
+<p>Errors:</p>
+<ul><li>EvalError - no longer used</li>
+<li>RangeError - number is outside allowable range</li>
+<li>ReferenceError - reference to item that doesn't exist</li>
+<li>SyntaxError - problem with code syntax</li>
+<li>TypeError - unexpected type of value being used</li>
+<li>URIError - problem with the URI</li>
+<li>InternalError - error with Javascript engine (e.g. recursion)</li>
+</ul>
+<p>Error properties (to be used for custom errors):</p>
+<ul><li>name - returns name of (custom error) function</li>
+<li>message - description of error</li>
+<li>stack - stack trace of error (not for production use)</li></ul>
+<p>Use 'throw' to create your own exceptions (not covered by that above)</p>
+<p>try - used to wrap a suspect piece of code that will pass the error to a 'catch' block, where you can diagnose and deal with the error.</p>
+<p>finally - code that will run after try and catch regardless of which ran before.</p>
+<p>TDD - Test Driven Development - writing tests before you write the code. Then write code to pass the tests, then streamline the code while testing all along. Full process:</p>
+<ol><li>Write tests</li>
+<li>Write code to pass tests</li>
+<li>Refactor the code</li>
+<li>Test refactored code</li>
+<li>Write more tests for new features</li></ol>
+
 <h2><a href="../../JavaScript30/02/index-START.html">JavaScript30 - Day 2</a></h2>
 
 </body>
