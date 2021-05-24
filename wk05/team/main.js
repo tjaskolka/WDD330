@@ -22,10 +22,6 @@ function renderHikeList(hikes, parent) {
     });
 }
 
-/*getAllHikes() {
-    return hikeList;
-}*/
-
 function renderSingleHike(hikeName){
    return this.getAllHikes().find(hike => hike.name === hikeName);
 };
