@@ -1,0 +1,13 @@
+#todo {
+    margin: 0 auto;
+    background-color: yellow;
+    min-width: 350px;
+    max-width: 400px;
+    font-size: 18px;
+    padding: .2rem 2rem;
+}
+
+h1 {
+    text-align: center;
+}
+
