@@ -9,6 +9,146 @@
 </head>
 <body>
 <h1>Week 7 Code and Notes</h1>
+<h2>Ch 11 - Further Functions</h2>
+<p>Functions are 1st-class objects (they can be passed around like any value).</p>
+<h3>Function Properties and Methods</h3>
+<ul><li>Length Method = (functionName.length) returns # of parameters for function</li>
+    <li>Call Method = ( functionName.call() ) sets the value of <em>this</em> inside a function. If there are additional arguments, the 'call' one is always first. If the function does not refer to <em>this</em>, <em>null</em> should be the first argument provided (e.g. functionName.call(null, argument2)</li>
+    <li>Apply Method = ( functionName.apply() ) does the same as call, but arguments are in array form.</li>
+    <li>Custom Property = e.g. create a description property that describes the function: add2.description = 'This function adds 2 numbers provided as an argument.'</li>
+<li>Memoization = caches results of a function for further use. Done when function might take extra time to come up with results.</li>
+</ul>
+<h3>Immediately Invoked Function Expressions</h3>
+<p>also IIFE (iffy) = anonymous function invoked as soon as it is defined by placing parentheses at the end of the function <(which is also turned into an expression by placing within () ), e.g.
+<pre>
+    (function(){
+        const temp='World';
+        console.log(`Hello ${temp}`);
+    })();</pre></p>
+    <ul><li>Temporary Variables - variables within an IIFE will only be available within the IIFE, keeping clashes from occurring because once the IIFE has run, the variable(s) used within is/are no longer available</li>
+    <li>Initialization Code - use an IIFE to set up any variables, objects and/or event handlers when the page loads. The code will not need to be run after that and it loses any variables used. </li>
+<li>Safe Use of Strict Mode - gives a way to isolate your code to run it in strict mode when you are using other's code that may not react well to strict mode.</li>
+<li>Creating Self-Contained Code Blocks - use to enclose block of code to keep it from interfering with other parts of program, especially when testing.</li>
+<li>Functions that Define and Rewrite Themselves - when you assign an anonymous function to a variable with the same name as the function, the function becomes the anonymous function after running the first time. <em>Lazy Definition Pattern</em> - once redefined and IIFE will lose any definitions given to the original version.</li>
+<li>Init-Time Branching - lets you define a function based on whether certain methods are supported so you don't have to check each time the function is run.</li>
+</ul>
+<h3>Recursive Functions</h3>
+<p>Invokes itself until a certain condition is met.</p>
+<h3>Callbacks</h3>
+<p>Functions passed to other functions as arguments and then invoked inside the function they are passed to.</p>
+<ul><li>Event-driven Asynchronous Programming - Asynchronous = out of order. Used to ensure program isn't held up waiting for an event to complete. A callback has to wait for execution after the rest of the program has completed.</li>
+<li>Callback Hell - code using multiple callbacks that is hard to track due to excessive nesting.</li>
+<li>Error-first Callbacks - style of coding that gives a callback 2 arguments, the first one being an error check.</li>
+</ul>
+<h3>Promise</h3>
+<p>A promise is a future result of an asynchronous operation (simplified version of callbacks)</p>
+<ul>
+<li>Promise Life Cycle 
+    <ul><li>Pending - state of promise while waiting for result after being created</li>
+    <li>Unsettled - stage of promise while waiting</li>
+<li>Settled - stage of promise after completion of operation</li>
+<li>Resolved - state of successfully completed promises</li>
+<li>Rejected - state of unsuccessful promise because of incompletion, failure or error</li></ul>
+</li>
+<li>Creating a Promise - use a constructor function with an executor as an argument
+<pre>
+    const promise = new Promise( (resolve, reject) => {
+        // initialization code goes here
+        if (success) {
+            resolve(value);
+        } else {
+            reject(error);
+        }
+    });
+</pre>
+</li>
+<li>Dealing with a Settled Promise
+<ul>
+    <li><em>then()</em> method deals with promise outcome</li>
+    <li>fulfilment function - called when promise is resolved using data returned from <em>resolve()</em> function</li>
+    <li>rejection function - called when promise is resolved using data returned from <em>reject()</em> function</li>
+    <li>catch() method - can be used to specify how to deal with operation failure instead of reject()</li>
+</ul>
+<li>Chaining Multiple Promises - a sequence of <em>then()</em> methods from asynchronous promises that are executed sequentially.</li>
+</li>
+</ul>
+<h3>Async function</h3>
+<p>Use <em>async</em> keyword. Used to write asynchronous code as if it were synchronous. Uses <em>await</em> operator to assign returned value of promise function to a variable then continues to next line of code.</p>
+<h3>Generalized Functions</h3>
+<p>Function that performs a general operation with a specific function. Example given showed a general function picking random numbers which then were used in a specific function.</p>
+<h3>Functions that return functions</h3>
+A variable assignment is used to make use of a returned function. Parentheses are then placed after the variable to invoke the function assigned to it: variable(). This can be used to create a generic function that accepts more specific parameters as customization.
+<h3>Closures</h3>
+<p>Reference to a variable created inside scope of a function but used in another part of the program. A function created inside another function will have access to the variables available to that other function. <em>Closure</em> = when the inner function is returned by the outer function giving access to the variables declared within the inner function.</p>
+<h3>Generators</h3>
+<p>Generators are special functions used to produce iterators that maintain the state of a value. They are defined by placing an asterisk after the function declaration:
+    <pre>
+        function* exampleGenerator() {
+            //code goes here
+        }
+    </pre>
+    <p>Calling a generator returns a Generator object used to create an iterator. The iterator uses a <em>next()</em> method that returns a value every time it is called. The keyword <em>yield</em> is used to return the value so that the state is remembered.</p>
+</p>
+<h3>Functional Programming</h3>
+<li>Pure Functions - functional programming uses pure functions
+    <ul><li>Return value of function depends on argument values, no others</li>
+    <li>No side effects. No alteration of values or data elsewhere in program.</li>
+<li>Referential transparency - same arguments always produce the same results</li>
+<li>Requires at least one argument</li>
+<li>Requires a return value</li>
+<li>Return values can be cached since they are consistent</li></ul>
+<li>Higher-Order Functions - Accept another function as an argument and/or return another function as a result.</li>
+</li>
+<h3>Currying</h3>
+<p>Process that involves the partial application of functions because not all arguments were available initially. A function is returned that expects the missing arguments to be supplied so a final result can be provided. It can turn a single function into a series of functions, useful when you repeatedly call a certain function with the same argument.</p>
+<h2>Ajax</h2>
+<h3>Response Interface</h3>
+<p>Made available with the Fetch API, the Response Interface deals with the object return by a fulfilled promise.</p>
+<ul><li>ok property - checks to see if response was successful
+    <ul><li>200 - successful</li>
+    <li>201 - a resource was created</li>
+<li>204 - successful but no content returned</li>
+<li>200-299 - returns 'true' to ok</li></ul>
+<li>statusText property - the status message return with the code</li>
+<li>headers </li>
+<li>url property- the url of the response</li>
+<li>redirected property- boolean that tells if page was redirected</li>
+<li>type property
+    <ul><li>basic - came from same domain</li>
+    <li>cors - came from valid cross-origin resource sharing server</li>
+<li>error - network error occurred</li>
+<li>opaque - response from no-cors domain, data will be severely restricted</li></ul>
+</li>
+</li>
+<li>Redirect method - sends request to another URL. </li>
+<li>Text responses method - takes a stream of text from the response and turns it into a string object for use by js. </li>
+<li>File response method - blob() reads raw data file and returns a promise that resolves with a blob object.</li>
+<li>JSON response method - most common format. transforms data into js object.</li>
+</ul>
+<p>A response object can also be created with a constructor function, useful for testing or if you are creating an API.</p>
+<h3>Request Interface</h3>
+<p>Used as an argument to fine-tune the request. Made using the Request() constructor or directly as arguments of fetch(). Properties:
+    <ul><li>url - URL of the requested resource. REQUIRED</li>
+    <li>method - specifies which HTTP method should be used. GET is default.</li>
+<li>headers </li>
+<li>mode - specify use of CORS. enabled by default</li>
+<li>cache - specify how browser cache will be used</li>
+<li>credentials - specify whether or not to allow cookies</li>
+<li>redirect - what to do if a redirect response is recieved
+    <ul><li>follow - follow redirect</li>
+    <li>error - throw an error</li>
+<li>manual - user has to click on link to follow redirect</li></ul>
+</li></ul></p>
+<p>HTTP - Hypertext Transfer Protocol
+    <ul><li>GET - request to retrieve resources. default request</li>
+    <li>POST - usually used to create a resource but can perform any task</li>
+<li>PUT - upserts, or updates/inserts a resource</li>
+<li>PATCH - make partial updates to a resource</li>
+<li>DELETE - deletes a resource</li></ul>
+    </p>
+<h3>Headers Interface</h3>
+<p>Headers contain information about a response or request such as: file-type, cookies, authentication and last modified. Created using constructor function. Use <em>has()</em> to check for existing properties within header. Can also use: get(), set(), append(), delete(), keys(), values() and entries().</p>
+<h3>Receiving Information</h3>
 
 </body>
 </html>
