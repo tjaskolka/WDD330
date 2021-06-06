@@ -1,3 +1,12 @@
+const url = 'https://spbooks.github.io/jsninja2/questions.json';
+
+fetch(url)
+.then(res => res.json())
+.then(quiz => {
+    view.start.addEventListener('click', () => game.start(quiz.questions), false);
+    view.response.addEventListener('click', (event) => game.check(event), false);
+});
+
 const quiz = [
     {name: "Superman", realName: "Clark Kent"},
     {name: "Wonder Woman", realName: "Diana Prince"},
@@ -98,6 +107,4 @@ const game = {
     }
 }
 
-view.start.addEventListener('click', () => game.start(quiz), false);
-view.response.addEventListener('submit', (event) => game.check(event), false);
 view.hide(view.response);
