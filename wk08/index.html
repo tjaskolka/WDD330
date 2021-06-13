@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 8 Code & Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Week 8 Code & Notes</h1>
+<h2>HTML & CSS3 Reading</h2>
+<p>TRANSFORMS = allow you to translate (reposition), rotate, scale and/or skew BLOCK elements.</p>
+<ul>
+<li>Translate = move up, down, left, right. Movement is relative to current position. </li>
+<li>Scale = use a positive number to change size <1 will decrease, >1 will increase.</li>
+    <li>Rotate = turns element on an axis to a certain angle.</li>
+    <li>Skew = changes perspective on element to simulate movement in a 3D plane.</li>
+</ul>
+<p>Origin = point of reference for transformation. </p>
+<p>Order = transformations will be executed in the order they are listed, so having one before another will affect what comes after.</p>
+<p>TRANSITIONS = provide a way for CSS values to change over time with the appearance of animation.</p>
+<ul><li>transition-property = defines the property(ies) that will be transitioned and has to have a midpoint.</li>
+<li>transition-timing-function = controls the pace of the transition. </li>
+<li>transition-delay = wait before starting transition</li></ul>
+<h3>Animations</h3>
+<p>CSS animations allow fine control of animation via keyframes, allowing more changes in between the beginning and end state than a transition would. They are a light-weight alternative to JavaScript animations.</p>
+<ul><li>animation-name - used to associate an animation with an element</li>
+<li>animation-duration - defines the length of time for one round of the animation.</li>
+<li>animation-timing-function - defines the progress of the animation.</li>
+<li>animation-iteration-count - specifies how many rounds the animation will play</li>
+<li>animation-direction - which direction the animation will play (i.e. forwards or backwards).</li>
+<li>animation-delay - time period before animation starts.</li>
+<li>animation-fill-mode - defines what happens before animation begins and after it ends.</li>
+<li>animation-play-state - defines state of animation (running or paused).</li>
+</ul>
+<h3>Canvas</h3>
+<p>Used to draw things using JavaScript. Can eliminate need to download images. It also manipulates pixels in images and video. Requires that a height and width be set to define the 'canvas' space. Canvas drawings can be saved. External images can be 'drawn' on the canvas, allowing pixel manipulation.
+</p>
+<h3>SVG</h3>
+<p>An XML file is used to described the desired object to be rendered. The resulting image is infinitely scalable without appreciable loss of quality. A JavaScript library (Raphaël) is an available tool to aid in drawing & animating. </p>
+<h3>Drag and Drop</h3>
+<p>An API that allows you to define certain elements as draggable. This gives an additional interactive quality to the page.</p>
+</body>
+</html>
