@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 9 Code & Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Week 9 Code & Notes</h1>
+<h2>JS Ninja Reading</h2>
+<p>BOM = Browser Object Model</p>
+<p>Global variables are created without using <em>const</em>, <em>let</em> or <em>var</em>.</p>
+<h3>Dialogs</h3>
+<p>Browser dialogs are produced by 3 functions: alert(), confirm() and prompt(). Alert pops up a message, confirm asks for confirmation or cancelation, and prompt asks for input from user.</p>
+<h3>Browser information</h3>
+<p>userAgent - returns information about browser used. Not always accurate, can be spoofed. *deprecated*</p>
+<h3>Location Properties</h3>
+<ul>
+<li>location.href - returns info about current URL. It can also change the current URL.</li>
+<li>location.protocol - describes protocol being used (http, https, ftp, etc.).</li>
+<li>location.host - gives domain and port of current URL.</li>
+<li>location.hostname - gives current domain.</li>
+<li>location.port - gives current port</li>
+<li>location.pathname - returns path after domain (e.g. /wk08/team).</p>
+<li>location.search - returns query string (part of URL starting with '?').</li>
+<li>location.hash - returns fragment identifier starting with '#'.</li>
+<li>location.origin - shows protocol and domain of current URL.</li>
+</ul>
+<h3>Location Methods</h3>
+<ul><li>reload() - forces reload of current page, either from cache or server.</li>
+<li>assign() - loads resource from another URL</li>
+<li>replace() - current page is not stored in session history eliminating ability to go back to it.</li>
+<li>toString() - returns URL as a string</li>
+</ul>
+<h3>History</h3>
+<p>Gives information about previously visited pages</p>
+<ul><li>history.length - shows number of pages visited previous to current one</li>
+<li>history.go() - lets you jump to a specific page in the history</li>
+<li>history.forward() - move one page forward in history</li>
+<li>history.back() - move one page back in history</li>
+</ul>
+<h3>Screen info</h3>
+<ul><li>screen.height & screen.width - gives height and width of screen in pixels</li>
+<li>screen.availHeight & screen.availWidth - gives height and width minus system menus (e.g. task bar)
+</li>
+<li>screen.colorDepth - gives color depth of user monitor</li>
+</ul>
+<h3>Document Object</h3>
+<p>
+    document.write() - writes string of text to page but will overwrite anything already there unless used inside <em>script</em> tags. 
+</p>
+<h3>Cookies</h3>
+<p>Locally stored information about a browser session that can be accessed upon next visit to same domain. Used to personalize visit, authenticate user and keep track of choices. Cookies expire after session is done unless given an expiration date.</p>
+<h3>Timing functions</h3>
+<p>setTimeout() - delays the start of a function by a specified amount of time.</p>
+<p>clearTimeout() - cancels above</p>
+<p>setInterval() - repeats function by set time interval</p>
+<p>clearInterval() - stops setInterval()</p>
+<p>Timing can be used to animate page elements.</p>
+<h2><a href="quiz/index.html">Quiz Ninja</a></h2>
+</body>
+</html>
