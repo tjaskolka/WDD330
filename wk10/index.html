@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 10 Code & Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Week 10 Code & Notes</h1>
+    <h2>MDN Form Validation</h2>
+    <ul>
+        <li>Why validate?</li>
+        <ul>
+            <li>Get correct data in proper format</li>
+            <li>To enforce security (such as passwords)</li>
+            <li>To protect ourselves from malicious code</li>
+        </ul>
+    </ul>
+    <ul>
+        <li>Form Validation</li>
+        <ul>
+            <li>Server Side</li>
+            <li>Client Side</li>
+            <ul>
+                <li>HTML5 form controls</li>
+                <ul>
+                    <li><em>required</em> - form cannot be submitted if this
+                        field is not filled out</li>
+                    <li><em>minlength</em> or <em>maxlength</em> - min and max
+                        length of string in this field</li>
+                    <li><em>min</em> and <em>max</em> - min and max number
+                        values in this field</li>
+                    <li><em>type</em> - defines what kind of data in this field
+                    </li>
+                    <li><em>pattern</em> - gives a pattern in the form of a
+                        regular expression that the data needs to match</li>
+                    <ul>
+                        <li>a -- matches one character that is 'a'</li>
+                        <li>abc -- matches 'a', followed by 'b', followed by 'c'
+                        </li>
+                        <li>ab?c -- matches 'a', optionally 'b', followed by 'c'
+                            ('ac' or 'abc')</li>
+                        <li>ab*c -- matches 'a', optionally 'b'*x, followed by
+                            'c' ('ac', 'abc' or 'abbbc', etc.)</li>
+                        <li>a|b -- matches 'a' or 'b'</li>
+                        <li>abc|xyz -- matches 'abc' or 'xyz'</li>
+                    </ul>
+                </ul>
+                <li>Valid data matches <em>:valid</em> CSS pseudo-class and
+                    allows the form to be submitted.</li>
+                <li>Invalid data matches <em>:invalid</em> CSS pseudo-class and
+                    displays an error instead of submitting form.</li>
+            </ul>
+            <ul>
+                <li>JavaScript validation</li>
+                <ul>
+                    <li>Constraint Validation API</li>
+                    <ul>
+                        <li>Form elements:</li>
+                        <ul>
+                            <li>HTMLButtonElement</li>
+                            <li>HTMLFieldSetElement</li>
+                            <li>HTMLInputElement</li>
+                            <li>HTMLOutputElement</li>
+                            <li>HTMLSelectElement</li>
+                            <li>HTMLTextAreaElement</li>
+                        </ul>
+                        <li>Properties:</li>
+                        <ul>
+                            <li>validationMessage - explains what did not validate</li>
+                            <li>validity - returns <em>validityState</em> property:
+                            <ul>
+                                <li>patternMismatch - <em>true</em> if not matching pattern</li>
+                                <li>tooLong - <em>true</em> if longer than specified <em>maxlength</em></li>
+                                <li>tooShort - <em>true</em> if shorter than <em>minlength</em></li>
+                                <li>rangeOverflow - <em>true</em> if greater than <em>max</em>
+                                </li>
+                                <li>rangeUnderflow - <em>true</em> if less than <em>min</em></li>
+                                <li>typeMismatch - <em>true</em> if incorrect syntax (not a valid email or url)</li>
+                                <li>valid - <em>true</em> if matching requirements</li>
+                                <li>valueMissing - <em>true</em> if <em>required</em> value is missing</li>
+                            </ul></li>
+                            <li>willValidate - <em>true</em> if elemnt will be validated upon submission</li>
+                        </ul>
+                        <li>Methods:</li>
+                        <ul>
+                            <li>checkValidity() - <em>true</em> if no validity issues</li>
+                            <li>setCustomValidity(message) - show custom error message</li>
+                        </ul>
+                    </ul>
+
+                </ul>
+            </ul>
+        </ul>
+        <h2>Using Fetch</h2>
+        
+        <h2><a href="../../JavaScript30/03/index-START.html">JavaScript30 Day 3</a></h2>
+</body>
+
+</html>
