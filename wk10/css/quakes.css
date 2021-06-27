@@ -1,0 +1,16 @@
+body {
+    background-color: blueviolet;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+}
+
+main {
+    background-color: cornsilk;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 1.5em;
+}
+
+h1 {
+    text-align: center;
+}
