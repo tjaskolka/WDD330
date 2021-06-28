@@ -97,9 +97,28 @@
             </ul>
         </ul>
         <h2>Using Fetch</h2>
-        
+        <p>A basic fetch request looks like this:</p>
+        <pre>fetch('http://example.com/movies.json')
+                .then(response => response.json())
+                .then(data => console.log(data));
+        </pre>
+        <p>If only one argurment, it should be the url/path to the resource being requested. The response comes back as HTTP and needs the json() method to extract the JSON data. If a second parameter is used, <em>init</em> gives control over settings such as: credentials, method, headers, cache and mode.</p>
+        <p>Fetch can also POST JSON-encode data (using POST or PUT as a method).</p>
+        <p>Files can be uploaded from a form using Fetch.</p>
+        <p>A successful fetch will have a <em>Response.ok</em> of 'true' and the promise will be resolved.</p>
+        <p>You can create your own headers for fetch using a constructor. This is where you can double check the content type.</p>
+        <p>Response Objects</p>
+        <ul><li>
+            Response.status - integer containing response status code (default = 200)
+        </li>
+    <li>Response.statusText - string which give HTTP status code (default = "")</li>
+<li>Response.ok - shorthand check for status within 200-299 range, inclusive. Boolean returned.</li></ul>
+<p>Body data may be included in either requests or responses. It may be an instance of types: ArrayBuffer, ArrayBufferView, Blob/File, string, URLSearchParams or FormData.</p>
+<p>The body can be extracted using the following methods: arrayBuffer(), blob(), json(), text() or formData().</p>
+<p>Support for Fetch can be detected by checking the window or worker scope for Headers, Request, Response or fetch(). A Polyfill is available for browsers that do not support fetch.</p>
         <h2><a href="../../JavaScript30/03/index-START.html">JavaScript30 Day 3</a></h2>
         <h2><a href="quakes.html">Team activity</a></h2>
+
 </body>
 
 </html>
