@@ -10,16 +10,14 @@
 <body>
     <div id="todo">
         <h1>To Do List</h1>
-        <div id="list">
-
-        </div>
-        <div>
-            <form id="addTodo">
-            <input type="text" id="task" name="task" placeholder="Get an 'A' in WDD330"><button type="submit">Add task</button>
+           <ul class="list">
+                <li>Add an item...</li>
+            </ul>
+            <form class="addTodo">
+            <input type="text" id="task" name="item" placeholder="Get an 'A' in WDD330" required><button type="submit">Add task</button>
             </form>
-        </div>
         <div id="footer">
-            <p><span id="total"></span> tasks left <button id="all">All</button><button id="undone">Undone</button><button id="done">Done</button></p></p>
+            <p><span id="total"></span> tasks left <button id="all">All</button><button id="undone">Undone</button><button id="done">Done</button></p>
         </div>
 
     </div>

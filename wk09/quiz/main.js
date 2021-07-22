@@ -7,12 +7,6 @@ fetch(url)
     view.response.addEventListener('click', (event) => game.check(event), false);
 });
 
-const quiz = [
-    {name: "Superman", realName: "Clark Kent"},
-    {name: "Wonder Woman", realName: "Diana Prince"},
-    {name: "Batman", realName: "Bruce Wayne"}
-];
-
 function random(a,b=1) {
     if (b === 1) {
         [a,b] = [b,a];
@@ -29,10 +23,10 @@ function shuffle(array) {
 
 const view = {
     score: document.querySelector('#score strong'),
-    question: document.getElementById('question'),
-    result: document.getElementById('result'),
-    info: document.getElementById('info'),
-    start: document.getElementById('start'),
+    question: document.querySelector('#question'),
+    result: document.querySelector('#result'),
+    info: document.querySelector('#info'),
+    start: document.querySelector('#start'),
     response: document.querySelector('#response'),
     timer: document.querySelector('#timer strong'),
     render(target,content,attributes) {
@@ -68,14 +62,23 @@ const view = {
 
 const game = {
     start(quiz) {
+        console.log('start() invoked');
         this.score = 0;
         this.questions = [...quiz];
         view.setup();
-        this.ask();
         this.secondsRemaining = 20;
         this.timer = setInterval(this.countdown, 1000);
+         this.ask();
+   },
+    countdown() {
+        game.secondsRemaining--;
+        view.render(view.timer, game.secondsRemaining);
+        if(game.secondsRemaining <= 0) {
+            game.gameOver();
+        }
     },
-    ask(){
+    ask(name){
+        console.log('ask() invoke');
         if(this.questions.length > 2) {
             shuffle(this.questions);
             this.question = this.questions.pop();
@@ -88,9 +91,8 @@ const game = {
             this.gameOver();
         }
     },
-    check(event){
-        event.preventDefault();
-        const response = view.response.answer.value;
+    check(event){        
+        const response = event.target.textContent;
         const answer = this.question.realName;
         if(response === answer){
             view.render(view.result, 'Correct!',{'class':'correct'});
@@ -99,15 +101,7 @@ const game = {
         } else {
             view.render(view.result, `Wrong! The correct answer was ${answer}`,{'class':'wrong'});
         }
-        view.resetForm();
         this.ask();
-    },
-    countdown() {
-        game.secondsRemaining--;
-        view.render(view.timer, game.secondsRemaining);
-        if(game.secondsRemaining < 0) {
-            game.gameOver();
-        }
     },
     gameOver(){
         view.render(view.info, `Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
@@ -115,3 +109,5 @@ const game = {
         clearInterval(this.timer);
     }
 }
+
+view.response.addEventListener('click', (event) => game.check(event), false);

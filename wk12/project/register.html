@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Doubles Registration Form</title>
+  </head>
+  <body>
+    <div class="box">
+        <h1>Register</h1>
+      <form id="registerForm">
+        <label for="empid"
+          >User ID:
+          <input
+            type="text"
+            id="empid"
+            placeholder="employee number"
+            pattern="[0-9]{7}"
+            title="Please use your 7-digit employee number"
+            required
+          />
+        </label>
+        <label for="firstName"
+          >First name:
+          <input type="text" id="firstName" placeholder="First name" required />
+        </label>
+        <label for="lastName"
+          >Last name:
+          <input type="text" id="lastName" placeholder="Last name" required />
+        </label>
+        <label for="shift"
+          >Usual shift:
+          <select id="shift" name="shift" required>
+            <option value="Day">Day</option>
+            <option value="Twilight">Twilight</option>
+            <option value="Midnight">Midnight</option>
+      </select>
+        </label>
+        <button class="button">Save</button>
+      </form>
+    </div>
+    <script src="js/register.js"></script>
+  </body>
+</html>
